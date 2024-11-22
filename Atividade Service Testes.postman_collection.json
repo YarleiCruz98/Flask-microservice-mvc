@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "6804640e-2a3c-47d0-94f6-8ee831993183",
+		"name": "Atividade Service Testes",
+		"description": "Coleção de testes para as rotas do serviço de atividades.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31362639"
+	},
+	"item": [
+		{
+			"name": "Listar Atividades",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:5002/atividades"
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Atividade por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:5002/atividades/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Atividade",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id_disciplina\": 1, \"enunciado\": \"Nova atividade de teste\", \"respostas\": []}"
+				},
+				"url": "localhost:5002/atividades"
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Atividade",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id_disciplina\": 1, \"enunciado\": \"Atividade de teste atualizada\", \"respostas\": [{\"id_aluno\": 1, \"resposta\": \"resposta1\", \"nota\": 8}]}"
+				},
+				"url": "localhost:5002/atividades/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Atividade",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:5002/atividades/1"
+			},
+			"response": []
+		}
+	]
+}

@@ -30,3 +30,27 @@ def obter_atividade(id_atividade):
         if atividade['id_atividade'] == id_atividade:
             return atividade
     raise AtividadeNotFound
+
+def criar_atividade(id_disciplina, enunciado, respostas=None):
+    if respostas is None:
+        respostas = []
+    id_atividade = max(atividade['id_atividade'] for atividade in atividades) + 1
+    nova_atividade = {
+        'id_atividade': id_atividade,
+        'id_disciplina': id_disciplina,
+        'enunciado': enunciado,
+        'respostas': respostas
+    }
+    atividades.append(nova_atividade)
+    return nova_atividade
+
+def atualizar_atividade(id_atividade, id_disciplina, enunciado, respostas):
+    atividade = obter_atividade(id_atividade)
+    atividade['id_disciplina'] = id_disciplina
+    atividade['enunciado'] = enunciado
+    atividade['respostas'] = respostas
+    return atividade
+
+def excluir_atividade(id_atividade):
+    global atividades
+    atividades = [atividade for atividade in atividades if atividade['id_atividade'] != id_atividade]

@@ -13,4 +13,4 @@ class PessoaServiceClient:
             return data.get('leciona', False) if data.get('isok') else False
         except requests.RequestException as e:
             print(f"Erro ao acessar o pessoa_service: {e}")
-            return False
+            return False  # Ou qualquer valor padrão que faça sentido
